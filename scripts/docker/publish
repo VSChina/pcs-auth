@@ -1,8 +1,10 @@
 #!/usr/bin/env bash -e
 
 # Note: use lowercase names for the Docker images
-DOCKER_IMAGE="azureiotpcs/pcs-auth-dotnet"
+DOCKER_IMAGE="vschinaiot/pcs-auth"
 # "testing" is the latest dev build, usually matching the code in the "master" branch
 DOCKER_TAG="$DOCKER_IMAGE:testing"
+
+docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 docker push $DOCKER_TAG
