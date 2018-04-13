@@ -13,5 +13,5 @@ script:
 - "bash ./$CODEBASE/scripts/docker/build"
 after_success:
 - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
-    bash ./$CODEBASE/scripts/docker/publish
+    ./$CODEBASE/scripts/docker/publish;
   fi
