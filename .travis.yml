@@ -11,7 +11,7 @@ before_install:
 - set -e
 script:
 - "bash ./$CODEBASE/scripts/docker/build"
-after-success:
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
-      "bash ./$CODEBASE/scripts/docker/publish"
-    fi
+after_success:
+- if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+    bash ./$CODEBASE/scripts/docker/publish
+  fi
